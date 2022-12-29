@@ -7,7 +7,16 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.ant-layout {
+  min-height: 100vh !important;
+}
+
+.ant-layout-footer {
+  background-color: #f07e13 !important;
+  color: white !important;
+  font-weight: bold;
+}
+
+.container {
+  padding: 15px 80px 0px 70px !important;
 }

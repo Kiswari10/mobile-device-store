@@ -1,0 +1,49 @@
+.ant-layout-header {
+  height: 105px !important;
+  overflow: hidden;
+  width: 100%;
+  background-color: white !important;
+  box-shadow: 0 5px 20px 0 rgba(0, 0, 0, 0.1);
+  z-index: 16;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0px 80px 0px 70px !important;
+}
+
+.logo {
+  line-height: 0px;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+}
+
+.logo > img {
+  width: 95px;
+  height: 85px;
+}
+
+.header_name {
+  margin-left: 10px;
+  font-size: 20px;
+  font-size: 15px;
+  font-weight: bold;
+}
+
+.user_section {
+  /* margin: 15px 40px 0px 0px; */
+  display: flex;
+  gap: 15px;
+}
+
+.header_account > span {
+  margin-right: 5px;
+}
+
+.header_cart:before {
+  content: '';
+  height: 15px;
+  transform: translate(0, -50%);
+  border-left: solid 1px #d9e1e1;
+  margin-right: 20px;
+}
