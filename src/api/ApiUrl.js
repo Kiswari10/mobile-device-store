@@ -1,3 +1,4 @@
 export const Endpoints = {
-  getProducts: `${process.env.REACT_APP_URI}product`,
+  product: `${process.env.REACT_APP_URI}product`,
+  cart: `${process.env.REACT_APP_URI}cart`,
 };

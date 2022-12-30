@@ -1,3 +1,55 @@
 .home_container {
-    padding: 15px 80px 0px 70px !important;
-  }
+  padding: 15px 80px 0px 70px !important;
+}
+
+.home_title {
+  font-size: 26px;
+}
+
+.container-breadcrumb {
+  margin-left: 4% !important;
+  margin-top: 20px;
+}
+
+/* Cards */
+.home_containerProducts {
+  margin: 10px 60px;
+  display: flex;
+  gap: 28px;
+  flex-wrap: wrap;
+  justify-content: center;
+}
+
+.home_containerProducts .ant-card {
+  width: 320px !important;
+  border-radius: 18px;
+}
+
+.home_card-container-img {
+  text-align: center;
+}
+
+.home_card-image {
+  width: 90%;
+}
+
+.ant-card-meta-title {
+  font-size: 20px !important;
+  margin-bottom: 0px !important;
+}
+
+.home_card-footer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  margin-bottom: 0px;
+}
+.home_card-price {
+  font-size: 18px;
+  color: #191919;
+}
+
+.home_card-footer .ant-btn-primary {
+  background-color: #ff6900;
+}

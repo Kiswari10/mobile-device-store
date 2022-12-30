@@ -26,6 +26,6 @@ module.exports = {
     'react'
   ],
   rules: {
-    
-  }
+    'import/export': 0
+}
 }

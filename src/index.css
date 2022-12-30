@@ -12,7 +12,8 @@ body {
 }
 
 .ant-layout-footer {
-  background-color: #f07e13 !important;
+  /* background-color: #E63780 !important; */
+  background-color: #383838 !important;
   color: white !important;
   font-weight: bold;
 }
