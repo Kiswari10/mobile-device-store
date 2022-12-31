@@ -1,5 +1,4 @@
 import { useEffect } from 'react';
-import { Link } from 'react-router-dom';
 import { useDispatch, useSelector } from 'react-redux';
 import { Breadcrumb } from 'antd';
 import { HomeOutlined } from '@ant-design/icons';
@@ -24,9 +23,7 @@ export const Home = () => {
         <Breadcrumb.Item>
           <HomeOutlined />
         </Breadcrumb.Item>
-        <Breadcrumb.Item>
-          <Link to='/'>Productos</Link>
-        </Breadcrumb.Item>
+        <Breadcrumb.Item>Productos</Breadcrumb.Item>
       </Breadcrumb>
       <h1 className='home_title'>Listado de productos</h1>
       {loading ? (

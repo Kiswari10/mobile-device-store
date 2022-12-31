@@ -20,7 +20,7 @@ export const ProductCard = ({ item }) => {
       <Meta title={item.brand} description={item.model} />
       <p className='home_card-footer'>
         <span className='home_card-price'>Precio: ${item.price}</span>
-        <Link to='/detail-product'>
+        <Link to={`/product-detail/${item.id}`}>
           <Button type='primary' shape='round'>
             Lo quiero
           </Button>

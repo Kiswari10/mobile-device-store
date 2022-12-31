@@ -1,14 +1,9 @@
 .home_container {
-  padding: 15px 80px 0px 70px !important;
+  padding: 25px 80px 40px 70px !important;
 }
 
 .home_title {
   font-size: 26px;
-}
-
-.container-breadcrumb {
-  margin-left: 4% !important;
-  margin-top: 20px;
 }
 
 /* Cards */
@@ -52,4 +47,11 @@
 
 .home_card-footer .ant-btn-primary {
   background-color: #ff6900;
+  border-color: #ff6900;
+}
+
+.home_card-footer .ant-btn-primary:hover {
+  color: #fff;
+  background-color: #333e48;
+  border-color: #333e48;
 }
