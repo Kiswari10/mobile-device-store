@@ -1,12 +1,22 @@
 import PropTypes from 'prop-types';
+import { useDispatch } from 'react-redux';
 import { Select, Button, Form } from 'antd';
 import { ShoppingOutlined } from '@ant-design/icons';
 
+import { postProductToCartAction } from '../../stateManagement/actions/cartAction';
+
 const { Option } = Select;
 
-export const ActionSection = ({ options }) => {
+export const ActionSection = ({ options, id }) => {
+  const dispatch = useDispatch();
+
   const onFinish = (values) => {
-    console.log('Success:', values);
+    const body = {
+      id,
+      ...values,
+    };
+
+    dispatch(postProductToCartAction(body));
   };
 
   const onFinishFailed = (errorInfo) => {
@@ -69,4 +79,5 @@ export const ActionSection = ({ options }) => {
 
 ActionSection.propTypes = {
   options: PropTypes.object,
+  id: PropTypes.string,
 };

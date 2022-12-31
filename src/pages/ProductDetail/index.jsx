@@ -42,7 +42,7 @@ export const ProductDetail = () => {
             <ImageSection image={product.imgUrl} />
             <div className='detailProduct_information'>
               <DescriptionSection product={product} />
-              <ActionSection options={product.options} />
+              <ActionSection options={product.options} id={product.id} />
             </div>
           </>
         )}

@@ -1,3 +1,4 @@
+import { useSelector } from 'react-redux';
 import { Layout, Badge } from 'antd';
 import { UserOutlined, ShoppingOutlined } from '@ant-design/icons';
 
@@ -7,11 +8,13 @@ import './header.css';
 const { Header } = Layout;
 
 export default function MainHeader() {
+  const { cart } = useSelector((state) => state.cart);
+
   return (
     <Header>
       <div className='logo'>
         <img src={logo} alt='Mi Store' />
-        <p className="header_name">Mi Store</p>
+        <p className='header_name'>Mi Store</p>
       </div>
       <div className='user_section'>
         <div className='header_account'>
@@ -19,7 +22,7 @@ export default function MainHeader() {
           <UserOutlined style={{ fontSize: '17px' }} />
         </div>
         <div className='header_cart'>
-          <Badge count={4} offset={[5, 10]}>
+          <Badge count={cart.length} offset={[5, 10]}>
             <ShoppingOutlined style={{ fontSize: '22px' }} />
           </Badge>
         </div>

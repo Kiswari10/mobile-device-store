@@ -19,11 +19,14 @@ export const get = async (url) => {
 export const post = async (url, body) => {
   const response = await fetch(url, {
     method: 'POST',
-    body,
+    body: JSON.stringify(body),
+    headers: {
+      'Content-Type': 'application/json',
+    },
   });
 
   if (response.status === 200) {
-    return response;
+    return response.json();
   } else {
     const errorMessage = { code: response.status, message: 'response.status' };
     throw errorMessage;
