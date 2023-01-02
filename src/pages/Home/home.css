@@ -6,6 +6,23 @@
   font-size: 26px;
 }
 
+/* title and search product */
+.home_header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.home_title {
+  font-size: 26px;
+}
+
+.home_container-search .home_input-search {
+  width: 300px;
+  margin-right: 12px;
+}
+
 /* Cards */
 .home_containerProducts {
   margin: 10px 60px;
