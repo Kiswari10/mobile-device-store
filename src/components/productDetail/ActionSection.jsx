@@ -1,5 +1,6 @@
+import { useEffect } from 'react';
 import PropTypes from 'prop-types';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { Select, Button, Form } from 'antd';
 import { ShoppingOutlined } from '@ant-design/icons';
 
@@ -9,6 +10,7 @@ const { Option } = Select;
 
 export const ActionSection = ({ options, id }) => {
   const dispatch = useDispatch();
+  const { cart, success } = useSelector((state) => state.cart);
 
   const onFinish = (values) => {
     const body = {
@@ -22,6 +24,12 @@ export const ActionSection = ({ options, id }) => {
   const onFinishFailed = (errorInfo) => {
     console.log('Failed:', errorInfo);
   };
+
+  useEffect(() => {
+    if (success) {
+      localStorage.setItem('cart', JSON.stringify(cart));
+    }
+  }, [success]);
 
   return (
     <div>

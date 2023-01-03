@@ -1,5 +1,6 @@
 import { Endpoints } from '../../api/ApiUrl';
 import { get } from '../../api/config';
+import { setExpireTime } from '../../utils';
 
 import {
   GET_PRODUCT_DETAIL,
@@ -14,6 +15,8 @@ export const getProductDetailAction = (id) => {
 
     try {
       const res = await get(`${Endpoints.product}/${id}`);
+      localStorage.setItem('productDetail', JSON.stringify(res[0]));
+      setExpireTime();
       dispatch(getProductDetailSuccess(res[0]));
     } catch (error) {
       dispatch(getProductDetailError(error));
@@ -24,9 +27,9 @@ export const getProductDetailAction = (id) => {
 
 const getProductDetail = () => ({ type: GET_PRODUCT_DETAIL });
 
-const getProductDetailSuccess = (products) => ({
+export const getProductDetailSuccess = (product) => ({
   type: GET_PRODUCT_DETAIL_SUCCESS,
-  payload: products,
+  payload: product,
 });
 
 const getProductDetailError = (error) => ({

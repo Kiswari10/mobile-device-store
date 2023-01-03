@@ -3,16 +3,30 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Breadcrumb } from 'antd';
 import { HomeOutlined } from '@ant-design/icons';
 
-import { getProductsAction } from '../../stateManagement/actions/productsAction';
+import {
+  getProductsAction,
+  getProductsSuccess,
+} from '../../stateManagement/actions/productsAction';
 import { ProductCard, SearchProduct } from '../../components';
 
 import './home.css';
+import { availableTime } from '../../utils';
 
 export const Home = () => {
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getProductsAction());
+    const cachedProducts = JSON.parse(localStorage.getItem('products'));
+
+    if (cachedProducts && availableTime()) {
+      // console.log('viendo lo guardado', cachedProducts);
+      dispatch(getProductsSuccess(cachedProducts));
+    } else {
+      console.log('se llamara al api mediante el action');
+      /* console.log('se limpia LS');
+      localStorage.clear(); */
+      dispatch(getProductsAction());
+    }
   }, []);
 
   const { loading, products } = useSelector((state) => state.products);

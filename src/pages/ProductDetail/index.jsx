@@ -4,7 +4,10 @@ import { useDispatch, useSelector } from 'react-redux';
 import { Breadcrumb } from 'antd';
 import { HomeOutlined } from '@ant-design/icons';
 
-import { getProductDetailAction } from '../../stateManagement/actions/productDetailAction';
+import {
+  getProductDetailAction,
+  getProductDetailSuccess,
+} from '../../stateManagement/actions/productDetailAction';
 import {
   ImageSection,
   DescriptionSection,
@@ -12,13 +15,29 @@ import {
 } from '../../components';
 
 import './product-detail.css';
+import { availableTime } from '../../utils';
 
 export const ProductDetail = () => {
   const params = useParams();
   const dispatch = useDispatch();
 
   useEffect(() => {
-    dispatch(getProductDetailAction(params.id));
+    const cachedProductDetail = JSON.parse(
+      localStorage.getItem('productDetail')
+    );
+
+    if (
+      cachedProductDetail &&
+      cachedProductDetail.id === params.id &&
+      availableTime()
+    ) {
+      console.log('product del LS');
+      dispatch(getProductDetailSuccess(cachedProductDetail));
+    } else {
+      console.log('se llamara al api que trae el detalle del producto');
+      // localStorage.clear();
+      dispatch(getProductDetailAction(params.id));
+    }
   }, []);
 
   const { loading, product } = useSelector((state) => state.productDetail);

@@ -5,6 +5,7 @@ import {
   ADD_PRODUCT_TO_CART,
   ADD_PRODUCT_TO_CART_SUCCESS,
   ADD_PRODUCT_TO_CART_ERROR,
+  SET_PRODUCTS_INTO_CART,
 } from '../types/cartType';
 
 /* Action para agregar un producto al carrito de compras */
@@ -32,4 +33,9 @@ const postProductToCartSuccess = (product) => ({
 const postProductToCartError = (error) => ({
   type: ADD_PRODUCT_TO_CART_ERROR,
   payload: error,
+});
+
+export const setProductsIntoCart = (products) => ({
+  type: SET_PRODUCTS_INTO_CART,
+  payload: products,
 });

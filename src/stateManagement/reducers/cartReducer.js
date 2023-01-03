@@ -2,6 +2,7 @@ import {
   ADD_PRODUCT_TO_CART,
   ADD_PRODUCT_TO_CART_SUCCESS,
   ADD_PRODUCT_TO_CART_ERROR,
+  SET_PRODUCTS_INTO_CART,
 } from '../types/cartType';
 
 const initialState = {
@@ -30,7 +31,11 @@ export const cartReducer = (state = initialState, action) => {
         loading: false,
         error: action.payload,
       };
-
+    case SET_PRODUCTS_INTO_CART:
+      return {
+        ...state,
+        cart: [...action.payload],
+      };
     default:
       return state;
   }

@@ -1,14 +1,31 @@
-import { useSelector } from 'react-redux';
+import { useEffect } from 'react';
+import { useDispatch, useSelector } from 'react-redux';
 import { Layout, Badge } from 'antd';
 import { UserOutlined, ShoppingOutlined } from '@ant-design/icons';
 
+import { setProductsIntoCart } from '../../../stateManagement/actions/cartAction';
+
 import logo from '../../../assets/img/logo.png';
 import './header.css';
+import { availableTime } from '../../../utils';
 
 const { Header } = Layout;
 
 export default function MainHeader() {
+  const dispatch = useDispatch();
   const { cart } = useSelector((state) => state.cart);
+
+  useEffect(() => {
+    const cachedCart = JSON.parse(localStorage.getItem('cart'));
+
+    if (cachedCart && availableTime()) {
+      console.log('viendo el cart en LS', cachedCart);
+      dispatch(setProductsIntoCart(cachedCart));
+    } else {
+      console.log('se limpia cart');
+      dispatch(setProductsIntoCart([]));
+    }
+  }, []);
 
   return (
     <Header>
