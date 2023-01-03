@@ -1,11 +1,12 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
+import { Alert } from 'antd';
 
 import {
   getProductsAction,
   getProductsSuccess,
 } from '../../stateManagement/actions/productsAction';
-import { ProductCard, SearchProduct } from '../../components';
+import { ProductCard, SearchProduct, SkeletonLoader } from '../../components';
 import { availableTime, clearLS } from '../../utils';
 
 import './home.css';
@@ -49,7 +50,7 @@ export const Home = () => {
           <SearchProduct setSearchTerm={setSearchTerm} />
         </div>
         {loading ? (
-          <p>Cargando...</p>
+          <SkeletonLoader />
         ) : products.filter(searchingTerm(searchTerm)).length > 0 ? (
           <div className='home_containerProducts'>
             {products.filter(searchingTerm(searchTerm))?.map((item) => (
@@ -57,7 +58,11 @@ export const Home = () => {
             ))}
           </div>
         ) : (
-          <p>No hay productos para esta búsqueda</p>
+          <Alert
+            message='No hay productos para esta búsqueda'
+            type='warning'
+            showIcon
+          />
         )}
       </div>
     </div>

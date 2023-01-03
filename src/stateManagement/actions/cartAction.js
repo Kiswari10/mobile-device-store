@@ -1,3 +1,5 @@
+import { message } from 'antd';
+
 import { Endpoints } from '../../api/ApiUrl';
 import { post } from '../../api/config';
 
@@ -16,9 +18,10 @@ export const postProductToCartAction = (body) => {
     try {
       await post(Endpoints.cart, body);
       dispatch(postProductToCartSuccess(body));
+      message.success('Producto agregado exitosamente!');
     } catch (error) {
       dispatch(postProductToCartError(error));
-      console.log(error);
+      message.error('Ocurrió un error al agregar el producto');
     }
   };
 };

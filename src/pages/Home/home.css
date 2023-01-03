@@ -25,6 +25,13 @@
   width: 300px;
 }
 
+/* skeleton loader */
+.home_containerProducts .ant-skeleton-button {
+  width: 320px !important;
+  border-radius: 18px !important;
+  height: 440px !important;
+}
+
 /* Cards */
 .home_containerProducts {
   display: flex;
@@ -105,6 +112,12 @@
   }
   .home_card-image {
     width: 100%;
+  }
+  .home_containerProducts .ant-skeleton.ant-skeleton-element {
+    width: 100% !important;
+  }
+  .home_containerProducts .ant-skeleton-button {
+    width: 100% !important;
   }
 }
 

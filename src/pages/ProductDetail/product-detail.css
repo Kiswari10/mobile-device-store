@@ -8,11 +8,22 @@
 .detailProduct_view {
   padding: 25px 80px 40px 70px !important;
   max-width: 1500px;
+  width: 100%;
 }
 
 .detailProduct_container {
   display: flex;
   padding: 45px 80px 0px 70px !important;
+}
+
+/* skeleton loader */
+.detailProduct_container .ant-skeleton-element {
+  width: 100% !important;
+}
+.ant-skeleton-image,
+.ant-skeleton-button {
+  width: 100% !important;
+  height: 400px !important;
 }
 
 /* image section */
@@ -139,6 +150,10 @@
   .detailProduct_actions {
     flex-direction: column;
     justify-content: space-between;
+  }
+  .ant-skeleton-image,
+  .ant-skeleton-button {
+    height: 350px !important;
   }
 }
 

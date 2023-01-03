@@ -1,3 +1,5 @@
+import { message } from 'antd';
+
 import { Endpoints } from '../../api/ApiUrl';
 import { get } from '../../api/config';
 import { setExpireTime } from '../../utils';
@@ -17,10 +19,10 @@ export const getProductsAction = () => {
       const res = await get(Endpoints.product);
       dispatch(getProductsSuccess(res));
       localStorage.setItem('products', JSON.stringify(res));
-      setExpireTime()
+      setExpireTime();
     } catch (error) {
       dispatch(getProductsError(error));
-      console.log(error);
+      message.error('Ocurrió un error al obtener el listado de productos');
     }
   };
 };

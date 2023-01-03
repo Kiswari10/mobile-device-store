@@ -12,6 +12,7 @@ import {
   ImageSection,
   DescriptionSection,
   ActionSection,
+  SkeletonLoaderDetail,
 } from '../../components';
 import { availableTime, clearLS } from '../../utils';
 
@@ -55,7 +56,7 @@ export const ProductDetail = () => {
         </Breadcrumb>
         <div className='detailProduct_container'>
           {loading ? (
-            <p>loading...</p>
+            <SkeletonLoaderDetail />
           ) : (
             <>
               <ImageSection image={product.imgUrl} />

@@ -1,3 +1,5 @@
+import { message } from 'antd';
+
 import { Endpoints } from '../../api/ApiUrl';
 import { get } from '../../api/config';
 import { setExpireTime } from '../../utils';
@@ -20,7 +22,7 @@ export const getProductDetailAction = (id) => {
       dispatch(getProductDetailSuccess(res[0]));
     } catch (error) {
       dispatch(getProductDetailError(error));
-      console.log(error);
+      message.error('Ocurrió un error al obtener el producto');
     }
   };
 };
