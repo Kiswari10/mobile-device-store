@@ -20,10 +20,8 @@ export default function MainHeader() {
     const cachedCart = JSON.parse(localStorage.getItem('cart'));
 
     if (cachedCart && availableTime()) {
-      console.log('viendo el cart en LS', cachedCart);
       dispatch(setProductsIntoCart(cachedCart));
     } else {
-      console.log('se limpia cart');
       dispatch(setProductsIntoCart([]));
     }
   }, []);

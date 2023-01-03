@@ -6,9 +6,9 @@ import {
   getProductsSuccess,
 } from '../../stateManagement/actions/productsAction';
 import { ProductCard, SearchProduct } from '../../components';
+import { availableTime, clearLS } from '../../utils';
 
 import './home.css';
-import { availableTime } from '../../utils';
 
 export const Home = () => {
   const dispatch = useDispatch();
@@ -16,13 +16,14 @@ export const Home = () => {
   useEffect(() => {
     const cachedProducts = JSON.parse(localStorage.getItem('products'));
 
-    if (cachedProducts && availableTime()) {
-      // console.log('viendo lo guardado', cachedProducts);
-      dispatch(getProductsSuccess(cachedProducts));
+    if (availableTime()) {
+      if (cachedProducts) {
+        dispatch(getProductsSuccess(cachedProducts));
+      } else {
+        dispatch(getProductsAction());
+      }
     } else {
-      console.log('se llamara al api mediante el action');
-      /* console.log('se limpia LS');
-      localStorage.clear(); */
+      clearLS(dispatch);
       dispatch(getProductsAction());
     }
   }, []);

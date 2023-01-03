@@ -13,9 +13,9 @@ import {
   DescriptionSection,
   ActionSection,
 } from '../../components';
+import { availableTime, clearLS } from '../../utils';
 
 import './product-detail.css';
-import { availableTime } from '../../utils';
 
 export const ProductDetail = () => {
   const params = useParams();
@@ -26,16 +26,14 @@ export const ProductDetail = () => {
       localStorage.getItem('productDetail')
     );
 
-    if (
-      cachedProductDetail &&
-      cachedProductDetail.id === params.id &&
-      availableTime()
-    ) {
-      console.log('product del LS');
-      dispatch(getProductDetailSuccess(cachedProductDetail));
+    if (availableTime()) {
+      if (cachedProductDetail && cachedProductDetail.id === params.id) {
+        dispatch(getProductDetailSuccess(cachedProductDetail));
+      } else {
+        dispatch(getProductDetailAction(params.id));
+      }
     } else {
-      console.log('se llamara al api que trae el detalle del producto');
-      // localStorage.clear();
+      clearLS(dispatch);
       dispatch(getProductDetailAction(params.id));
     }
   }, []);
