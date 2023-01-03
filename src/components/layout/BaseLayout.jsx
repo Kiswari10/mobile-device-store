@@ -10,9 +10,7 @@ export const BaseLayout = ({ children }) => {
   return (
     <Layout>
       <Header />
-      <Content className='content-layout'>
-        <div className='site-layout-background'>{children}</div>
-      </Content>
+      <Content className='content-layout'>{children}</Content>
       <Footer />
     </Layout>
   );

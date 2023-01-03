@@ -1,3 +1,8 @@
+.home-layout-background {
+  width: 100%;
+  max-width: 1500px;
+}
+
 .home_container {
   padding: 25px 50px 40px 50px !important;
 }
@@ -58,17 +63,6 @@
 .home_card-price {
   font-size: 18px;
   color: #191919;
-}
-
-.home_card-footer .ant-btn-primary {
-  background-color: #ff6900;
-  border-color: #ff6900;
-}
-
-.home_card-footer .ant-btn-primary:hover {
-  color: #fff;
-  background-color: #333e48;
-  border-color: #333e48;
 }
 
 @media screen and (max-width: 1463px) {

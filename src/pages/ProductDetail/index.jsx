@@ -43,29 +43,31 @@ export const ProductDetail = () => {
   const { loading, product } = useSelector((state) => state.productDetail);
 
   return (
-    <div className='detailProduct_view'>
-      <Breadcrumb>
-        <Breadcrumb.Item>
-          <Link to='/'>
-            <HomeOutlined /> <span>Productos</span>
-          </Link>
-        </Breadcrumb.Item>
-        <Breadcrumb.Item className='item-active'>
-          Detalle Producto
-        </Breadcrumb.Item>
-      </Breadcrumb>
-      <div className='detailProduct_container'>
-        {loading ? (
-          <p>loading...</p>
-        ) : (
-          <>
-            <ImageSection image={product.imgUrl} />
-            <div className='detailProduct_information'>
-              <DescriptionSection product={product} />
-              <ActionSection options={product.options} id={product.id} />
-            </div>
-          </>
-        )}
+    <div className='detail-layout-background'>
+      <div className='detailProduct_view'>
+        <Breadcrumb>
+          <Breadcrumb.Item>
+            <Link to='/'>
+              <HomeOutlined /> <span>Productos</span>
+            </Link>
+          </Breadcrumb.Item>
+          <Breadcrumb.Item className='item-active'>
+            Detalle Producto
+          </Breadcrumb.Item>
+        </Breadcrumb>
+        <div className='detailProduct_container'>
+          {loading ? (
+            <p>loading...</p>
+          ) : (
+            <>
+              <ImageSection image={product.imgUrl} />
+              <div className='detailProduct_information'>
+                <DescriptionSection product={product} />
+                <ActionSection options={product.options} id={product.id} />
+              </div>
+            </>
+          )}
+        </div>
       </div>
     </div>
   );

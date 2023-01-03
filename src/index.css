@@ -16,9 +16,14 @@ body {
   justify-content: center !important;
 }
 
-.site-layout-background {
-  width: 100%;
-  max-width: 1500px;
+.ant-btn-primary {
+  background-color: #ff6900;
+  border-color: #ff6900;
+}
+
+.ant-btn-primary:hover {
+  background-color: #ff6900 !important;
+  border-color: #ff6900 !important;
 }
 
 .ant-layout-footer {
