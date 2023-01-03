@@ -27,7 +27,7 @@
 
 /* skeleton loader */
 .home_containerProducts .ant-skeleton-button {
-  width: 320px !important;
+  width: 290px !important;
   border-radius: 18px !important;
   height: 440px !important;
 }
@@ -35,13 +35,13 @@
 /* Cards */
 .home_containerProducts {
   display: flex;
-  gap: 28px;
+  gap: 20px;
   flex-wrap: wrap;
   justify-content: space-between;
 }
 
 .home_containerProducts .ant-card {
-  width: 320px !important;
+  width: 290px !important;
   border-radius: 18px;
 }
 
@@ -51,8 +51,8 @@
 }
 
 .home_card-image {
-  /* width: 90%; */
-  height: 95%;
+  width: 95%;
+  height: 90%;
 }
 
 .ant-card-meta-title {
@@ -74,7 +74,7 @@
 
 @media screen and (max-width: 1463px) {
   .home_container {
-    padding: 25px 70px 40px 70px !important;
+    padding: 25px 50px 40px 50px !important;
   }
   .home_containerProducts {
     justify-content: center;
