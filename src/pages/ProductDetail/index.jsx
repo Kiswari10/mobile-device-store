@@ -46,12 +46,13 @@ export const ProductDetail = () => {
     <div className='detailProduct_view'>
       <Breadcrumb>
         <Breadcrumb.Item>
-          <HomeOutlined />
+          <Link to='/'>
+            <HomeOutlined /> <span>Productos</span>
+          </Link>
         </Breadcrumb.Item>
-        <Breadcrumb.Item>
-          <Link to='/'>Productos</Link>
+        <Breadcrumb.Item className='item-active'>
+          Detalle Producto
         </Breadcrumb.Item>
-        <Breadcrumb.Item>Detalle Producto</Breadcrumb.Item>
       </Breadcrumb>
       <div className='detailProduct_container'>
         {loading ? (

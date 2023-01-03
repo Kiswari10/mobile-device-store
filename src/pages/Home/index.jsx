@@ -1,7 +1,5 @@
 import { useState, useEffect } from 'react';
 import { useDispatch, useSelector } from 'react-redux';
-import { Breadcrumb } from 'antd';
-import { HomeOutlined } from '@ant-design/icons';
 
 import {
   getProductsAction,
@@ -44,12 +42,6 @@ export const Home = () => {
 
   return (
     <div className='home_container'>
-      <Breadcrumb>
-        <Breadcrumb.Item>
-          <HomeOutlined />
-        </Breadcrumb.Item>
-        <Breadcrumb.Item>Productos</Breadcrumb.Item>
-      </Breadcrumb>
       <div className='home_header'>
         <h1 className='home_title'>Listado de productos</h1>
         <SearchProduct setSearchTerm={setSearchTerm} />
