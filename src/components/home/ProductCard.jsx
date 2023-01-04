@@ -14,7 +14,7 @@ export const ProductCard = ({ item }) => {
             item.imgUrl ||
             'https://images.vexels.com/media/users/3/208383/isolated/preview/a17b49a9539f0bab677ad3e84f976537-ilustraci-n-de-tel-fono-m-vil-antiguo.png'
           }
-          alt='mobile-image'
+          alt={item.model}
         />
       </div>
       <Meta title={item.brand} description={item.model} />

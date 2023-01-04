@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pruebas en <ProductCard /> debe hacer match con el snapshot 1`] = `
+<div>
+  <div
+    class="ant-card ant-card-hoverable css-dev-only-do-not-override-acm2ia"
+  >
+    <div
+      class="ant-card-body"
+    >
+      <div
+        class="home_card-container-img"
+      >
+        <img
+          alt="Redmi Note 10S"
+          class="home_card-image"
+          src="https://http2.mlstatic.com/D_NQ_NP_769912-MLA46490092919_062021-O.jpg"
+        />
+      </div>
+      <div
+        class="ant-card-meta"
+      >
+        <div
+          class="ant-card-meta-detail"
+        >
+          <div
+            class="ant-card-meta-title"
+          >
+            Xiaomi
+          </div>
+          <div
+            class="ant-card-meta-description"
+          >
+            Redmi Note 10S
+          </div>
+        </div>
+      </div>
+      <p
+        class="home_card-footer"
+      >
+        <span
+          class="home_card-price"
+        >
+          Precio: $
+          340
+        </span>
+        <a
+          href="/product-detail/1"
+        >
+          <button
+            class="ant-btn css-dev-only-do-not-override-acm2ia ant-btn-round ant-btn-primary"
+            type="button"
+          >
+            <span>
+              Lo quiero
+            </span>
+          </button>
+        </a>
+      </p>
+    </div>
+  </div>
+</div>
+`;
