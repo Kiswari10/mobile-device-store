@@ -2,6 +2,10 @@
 
 Mini aplicación de tienda online para comprar dispositivos móviles.
 
+## 💻 Demo
+
+Si quieres ver la demo de este proyecto desplegado, puedes visitar el siguiente [link](https://mobile-device-store.netlify.app/).
+
 ## 🚀 Instalación
 
 1. Clona este proyecto.
@@ -19,10 +23,19 @@ Mini aplicación de tienda online para comprar dispositivos móviles.
 2. Para ejecutar los test
 `npm run test`
 
-## 🛠 Despliegue
+## 📦 Despliegue
 
 1. Una vez instaladas las dependencias, puede hacer el build
 `npm run build`
+
+## 🛠 Tecnologías utilizadas
+
+- React versión 18.
+- React Router.
+- Redux.
+- React Redux.
+- Ant Design.
+- Jest
 
 ## 📄 Licencia
 
