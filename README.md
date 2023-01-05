@@ -17,7 +17,10 @@ Si quieres ver la demo de este proyecto desplegado, puedes visitar el siguiente 
    `npm install`
 4. Levanta el servidor con el api en el siguiente [repositorio](https://github.com/Kiswari10/server) siguiendo los pasos descritos.
 5. Corre el ambiente local
-   `npm start`
+   `npm start`  
+
+
+**NOTA:** el archivo .env debería estar especificado en el .gitignore ya que puede contener datos sensibles, pero para fines prácticos del proyecto se mantendrá de forma visible.
 
 ## 🔧 Otros scripts
 
