@@ -44,10 +44,20 @@ export const ActionSection = ({ options, id }) => {
         onFinish={onFinish}
         onFinishFailed={onFinishFailed}
         autoComplete='off'
+        requiredMark={false}
       >
         <div>
           <div>
-            <Form.Item label='Color' name='codeColor'>
+            <Form.Item
+              label='Color'
+              name='codeColor'
+              rules={[
+                {
+                  required: true,
+                  message: 'Por favor, selecciona un color',
+                },
+              ]}
+            >
               <Select
                 className='container-actions-product-select'
                 placeholder='Selecciona un color'
@@ -61,7 +71,16 @@ export const ActionSection = ({ options, id }) => {
             </Form.Item>
           </div>
           <div>
-            <Form.Item label='Almacenamiento' name='codeStorage'>
+            <Form.Item
+              label='Almacenamiento'
+              name='codeStorage'
+              rules={[
+                {
+                  required: true,
+                  message: 'Por favor, selecciona un almacenamiento',
+                },
+              ]}
+            >
               <Select
                 className='container-actions-product-select'
                 placeholder='Seleccione Almacenamiento'
