@@ -2,7 +2,7 @@
 
 Mini aplicación de tienda online para comprar dispositivos móviles.
 
-![demo](https://im.ezgif.com/tmp/ezgif-1-1f13a0e7c4.gif)
+![demo](https://res.cloudinary.com/dlmq0vtkk/image/upload/v1673015830/demo_ubomvv.gif)
 
 ## 💻 Demo
 
